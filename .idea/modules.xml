@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ResumeApp.iml" filepath="$PROJECT_DIR$/.idea/ResumeApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyResume/SpringBootForm.iml" filepath="$PROJECT_DIR$/MyResume/SpringBootForm.iml" />
+    </modules>
+  </component>
+</project>

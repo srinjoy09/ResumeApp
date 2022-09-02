@@ -1,0 +1,44 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="ID">ID</label>
+        <input type="text" [(ngModel)]="choco!.id"
+               class="form-control"
+               id="ID"
+               name="name"
+               placeholder="Enter your id"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="choco!.name"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter your name"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="quantity">quantity</label>
+        <input type="text" [(ngModel)]="choco!.quantityAvailable"
+               class="form-control"
+               id="quantity"
+               name="quantity"
+               placeholder="Enter your quantity"
+               required #email="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="unit">unit</label>
+        <input type="text" [(ngModel)]="choco!.unitPrice"
+               class="form-control"
+               id="unit"
+               name="unit"
+               placeholder="Enter your unit price"
+               required #email="ngModel">
+      </div>
+      <button type="submit" [disabled]="!userForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

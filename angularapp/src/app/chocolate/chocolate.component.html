@@ -1,0 +1,22 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Unit Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let choco of chocos">
+        <td>{{ choco.id }}</td>
+        <td>{{ choco.name }}</td>
+        <td>{{ choco.quantityAvailable }}</td>
+        <td>{{ choco.unitPrice }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
