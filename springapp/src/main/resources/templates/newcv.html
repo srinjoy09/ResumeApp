@@ -1,0 +1,97 @@
+<!DOCTYPE >
+
+<html lang="en">
+
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+     <title>My Resume</title>
+     <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+     <style type="text/css" >
+        * { margin: 0; padding: 0; }
+        body { font-family: "Noto Sans",sans-serif; font-size: 17px; line-height: 24px;}
+        img.pic { float: right; margin: -30px 0 0 0; }
+        .clear { clear: both; }
+        #page-wrap { width: 800px; margin: 40px auto 60px; }
+        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
+        p { margin: 0 0 16px 0; }
+        dd { width: 600px; float: right; }
+        dd.clear { float: none; margin: 0; height: 15px; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 10px; }
+     </style>
+</head>
+
+<body th:style="'background-image:url(' + @{images/4940019.jpg} + '); background-repeat: no-repeat; background-size: cover;'">
+
+    <div id="page-wrap">
+        <img class="pic" id="pic" th:src="@{images/me.png}" alt="Photo of me" />
+        <div id="contact-info" class="vcard">
+            <h1 class="fn" th:text="${user.name}"></h1>
+            <p>
+            <h4>Phone Number: </h4><span th:text="${user.mobileNumber}"></span><br/>
+            <h4>Email: </h4><span th:text="${user.email}"></span><br/>
+            <h4>Address: </h4><span th:text="${user.address}"></span><br/>
+            </p>
+        </div>
+            <h3>About Me</h3>
+            <p th:text="${user. bio}"></p>
+            <h3>Hobbies</h3>
+            <span th:text="${user.hobbies}"></span><br/>
+        <div class="clear"></div>
+        <dl>
+            <dd class="clear"></dd>
+            <h3>Skills</h3>
+            <span th:text="${user.skills}"></span><br/>
+            <br/>
+            <h3>Education</h3>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Course Type</th>
+                    <th>Course</th>
+                    <th>Institute</th>
+                    <th>Years</th>
+                    <th>Percentage/CGPA</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="e : ${education}">
+                    <td><span th:text="${e.courseType}"> Course Type </span></td>
+                    <td><span th:text="${e.course}"> Course </span></td>
+                    <td><span th:text="${e.institute}"> Institute </span></td>
+                    <td><span th:text="${e.years}"> Years </span></td>
+                    <td><span th:text="${e.percentage}"> Percentage/CGPA </span></td>
+                </tr>
+                </tbody>
+            </table>
+            <br/>
+            <h3>Projects</h3>
+
+            <table>
+			<thead>
+			<tr>
+				<th>Number</th>
+				<th>Project</th>
+                <th>Resource</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr th:each="p : ${projects}">
+				<td><span th:text="${p.id}"> Number </span></td>
+				<td><span th:text="${p.description}"> Project </span></td>
+                <td><span th:text="${p.resources}"> Resource </span></td>
+			</tr>
+			</tbody>
+		    </table>
+        </dl>
+        <div class="clear"></div>
+        <br/>
+        <br/>
+        <a href="/edit">Click here to update</a>
+    </div>
+
+</body>
+
+</html>
